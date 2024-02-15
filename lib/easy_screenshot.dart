@@ -18,9 +18,9 @@ class EasyScreenshotController {
   Future<File> capture() async {
     final tempDirectory = await getTemporaryDirectory();
 
-    Uint8List _image = await _captureAsImage();
-    File file = await File('$tempDirectory/easyscreenshot.png').create();
-    file.writeAsBytesSync(_image);
+    Uint8List image = await _captureAsImage();
+    File file = await File('${tempDirectory.path}/easyscreenshot.png').create();
+    file.writeAsBytesSync(image);
     return file;
   }
 
@@ -28,11 +28,10 @@ class EasyScreenshotController {
     RenderRepaintBoundary boundary =
         _screenKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
     try {
-      var _image = await boundary.toImage(pixelRatio: 1.0);
-      ByteData? _byteData =
-          await _image.toByteData(format: ImageByteFormat.png);
-      Uint8List _uint8List = _byteData!.buffer.asUint8List();
-      return _uint8List;
+      var image = await boundary.toImage(pixelRatio: 1.0);
+      ByteData? byteData = await image.toByteData(format: ImageByteFormat.png);
+      Uint8List uint8List = byteData!.buffer.asUint8List();
+      return uint8List;
     } on Exception {
       rethrow;
     }

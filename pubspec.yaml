@@ -1,7 +1,7 @@
 name: easy_screenshot
 description: "Capture any widget as image."
-version: 1.0.0
-homepage:
+version: 1.0.1
+homepage: https://github.com/kapilmhr/Easy_Screenshot
 
 environment:
   sdk: '>=3.2.6 <4.0.0'
