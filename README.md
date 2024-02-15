@@ -2,12 +2,7 @@
 # Easy Screenshot
 
 #### Easy Screenshot for Flutter
-
-
-- [ ] 
-- [ ] List item
-
-A flutter package to convert any widget as image
+> A flutter package to convert any widget as image
 
 ![code](https://github.com/kapilmhr/Easy-Screenshot/raw/7cff7df1f2449ef14e2d39ff83368729315b4bb2/sc/code.png)
 
